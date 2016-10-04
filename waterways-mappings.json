@@ -1,0 +1,53 @@
+{
+    "generalized_tables": {
+        "waterways_gen0": {
+            "source": "waterways_gen1",
+            "sql_filter": null,
+            "tolerance": 200
+        },
+        "waterways_gen1": {
+            "source": "waterways",
+            "sql_filter": null,
+            "tolerance": 50.0
+        }
+    },
+    "tables": {
+        "waterways": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },
+                {
+                    "type": "mapping_value",
+                    "name": "type",
+                    "key": null
+                }
+            ],
+            "type": "linestring",
+            "mapping": {
+                "waterway": [
+                    "stream",
+                    "river",
+                    "canal",
+                    "drain",
+                    "ditch"
+                ],
+                "barrier": [
+                    "ditch"
+                ]
+            }
+        }
+    }
+}
